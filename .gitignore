@@ -1,0 +1,28 @@
+# build
+target/
+bin/
+build/
+gradle/
+
+# log
+logs/
+
+# trash
+.DS_Store
+
+# tmp
+__*
+
+# eclipse
+.classpath
+.project
+.settings/
+
+# idea
+.idea/
+.gradle
+*.iml
+.run/
+
+# virtual machine crash logs
+hs_err_pid*
