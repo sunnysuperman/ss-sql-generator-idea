@@ -10,20 +10,19 @@ repositories {
     maven { url "https://maven.aliyun.com/repository/public/" }
 }
 
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.3'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.3'
-    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.9.3'
-    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.9.3'
-}
+//dependencies {
+//    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.3'
+//    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.3'
+//    testRuntimeOnly 'org.junit.vintage:junit-vintage-engine:5.9.3'
+//    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.9.3'
+//}
 
 // Configure Gradle IntelliJ Plugin
 // Read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
-    version = "2021.2"
+    version = "2021.1"
     type = "IC" // Target IDE Platform
     plugins = ['java']
-    // plugins.set(listOf("java"))
 }
 
 tasks.withType(JavaCompile) {
@@ -31,17 +30,7 @@ tasks.withType(JavaCompile) {
     options.compilerArgs += ['-Xlint:unchecked', '-Xlint:deprecation', '-parameters']
 }
 
-//tasks {
-//    // Set the JVM compatibility versions
-//    withType(JavaCompile) {
-//        sourceCompatibility = "11"
-//        targetCompatibility = "11"
-//        options.encoding = "UTF-8"
-//    }
-//
-//    patchPluginXml {
-//        sinceBuild = "212"
-//        untilBuild = "222.*"
-//    }
-//
-//}
+patchPluginXml {
+    sinceBuild = '211'
+    untilBuild = '239.*'
+}
